@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import API from '../../http-configs/api-base';
 
 
-export const fetchEpisodes = createAsyncThunk("fetchEpisodes", async () => {
-  const response = await API.get("/episode");
+export const fetchEpisodes = createAsyncThunk("fetchEpisodes", async (filters) => {
+  const response = await API.get("/episode/?name=" + filters.name);
   return response.data.results;
 });
 
@@ -20,7 +20,7 @@ const episodesSlice = createSlice({
     },
     [fetchEpisodes.fulfilled]: (state, action) => {
       state.loading = false;
-      state.entities = [...state.entities, ...action.payload];
+      state.entities = [...action.payload];
     },
     [fetchEpisodes.rejected]: (state, action) => {
       state.loading = false;

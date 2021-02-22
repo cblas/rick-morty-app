@@ -1,15 +1,14 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-//import SearchIcon from '@material-ui/icons/Search';
-import Episodes from  './features/Episodes/Episode';
-import Characters from  './features/Characters/Character';
+import Episodes from './features/Episodes/Episode';
+import Characters from './features/Characters/Character';
+import Tabs from './components/Tabs';
 
 function Copyright() {
   return (
@@ -53,10 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7];
-
-
-function App () {
+function App() {
   const classes = useStyles();
 
   return (
@@ -64,7 +60,6 @@ function App () {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-          {/* <CameraIcon className={classes.icon} /> */}
           <Typography variant="h6" color="inherit" noWrap>
             Rick and Morty App
           </Typography>
@@ -79,22 +74,13 @@ function App () {
             </Typography>
             {/* <SearchBar /> */}
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Something short and leading about the collection below—its contents.
+              Search for Episodes and Characters.
             </Typography>
-            <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
-                <Grid item>
-                {/* <Button
-                  variant="contained"
-                  color="primary"
-                  className={classes.button}
-                  startIcon={<SearchIcon />}
-                >
-                  SEARCH
-                </Button> */}
+                <Grid item xs={12} sm={6} md={12}>
+                  <Tabs />
                 </Grid>
               </Grid>
-            </div>
           </Container>
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
@@ -102,16 +88,16 @@ function App () {
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={6}>
               <Typography variant="h5" className={classes.title}>
-              Recent Episodes 
+                Recent Episodes
               </Typography>
-              <br/>
-                <Episodes />
+              <br />
+              <Episodes />
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
               <Typography variant="h5" className={classes.title}>
-              Recent Chapters 
+                Recent Charapters
               </Typography>
-              <br/>
+              <br />
               <Characters />
             </Grid>
           </Grid>

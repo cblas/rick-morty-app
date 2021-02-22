@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import API from '../../http-configs/api-base';
 
 
-export const fetchCharacters = createAsyncThunk("fetchCharacters", async () => {
-  const response = await API.get("/character");
+export const fetchCharacters = createAsyncThunk("fetchCharacters", async (filters) => {
+  const response = await API.get("/character/?name=" + filters.name);
   return response.data.results;
 });
 
@@ -20,7 +20,7 @@ const characterSlice = createSlice({
     },
     [fetchCharacters.fulfilled]: (state, action) => {
       state.loading = false;
-      state.entities = [...state.entities, ...action.payload];
+      state.entities = [...action.payload];
     },
     [fetchCharacters.rejected]: (state, action) => {
       state.loading = false;
