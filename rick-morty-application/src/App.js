@@ -8,7 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 //import SearchIcon from '@material-ui/icons/Search';
-import Episodes from  './features/EpisodesComponent/Episodes'
+import Episodes from  './features/Episodes/Episode';
+import Characters from  './features/Characters/Character';
 
 function Copyright() {
   return (
@@ -107,9 +108,11 @@ function App () {
                 <Episodes />
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
-            <Typography variant="h5" className={classes.title}>
+              <Typography variant="h5" className={classes.title}>
               Recent Chapters 
               </Typography>
+              <br/>
+              <Characters />
             </Grid>
           </Grid>
         </Container>

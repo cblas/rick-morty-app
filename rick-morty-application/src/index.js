@@ -5,9 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import store from "./redux-app/store";
-import { fetchEpisodes } from "./features/EpisodesComponent/episodesSlice";
+import { fetchEpisodes } from "./features/Episodes/episodesSlice";
+import { fetchCharacters } from "./features/Characters/CharacterSlice";
 
 store.dispatch(fetchEpisodes());
+store.dispatch(fetchCharacters());
 
 ReactDOM.render(
   <React.StrictMode>
