@@ -7,8 +7,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import Link from '@material-ui/core/Link';
-import SearchIcon from '@material-ui/icons/Search';
+//import SearchIcon from '@material-ui/icons/Search';
+import Episodes from  './features/EpisodesComponent/Episodes'
 
 function Copyright() {
   return (
@@ -83,14 +83,14 @@ function App () {
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">
                 <Grid item>
-                <Button
+                {/* <Button
                   variant="contained"
                   color="primary"
                   className={classes.button}
                   startIcon={<SearchIcon />}
                 >
                   SEARCH
-                </Button>
+                </Button> */}
                 </Grid>
               </Grid>
             </div>
@@ -101,14 +101,14 @@ function App () {
           <Grid container spacing={4}>
             <Grid item xs={12} sm={6} md={6}>
               <Typography variant="h5" className={classes.title}>
-              Latest Episodes 
+              Recent Episodes 
               </Typography>
               <br/>
-              
+                <Episodes />
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
             <Typography variant="h5" className={classes.title}>
-              Latest Chapters 
+              Recent Chapters 
               </Typography>
             </Grid>
           </Grid>
