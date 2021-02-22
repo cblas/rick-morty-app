@@ -72,12 +72,8 @@ function App() {
             <Typography component="h2" variant="h3" align="center" color="textPrimary" gutterBottom>
               Rick and Morty's fan site
             </Typography>
-            {/* <SearchBar /> */}
-            <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Search for Episodes and Characters.
-            </Typography>
               <Grid container spacing={2} justify="center">
-                <Grid item xs={12} sm={6} md={12}>
+                <Grid item xs={12} sm={12} md={12}>
                   <Tabs />
                 </Grid>
               </Grid>
@@ -95,7 +91,7 @@ function App() {
             </Grid>
             <Grid item xs={12} sm={6} md={6}>
               <Typography variant="h5" className={classes.title}>
-                Recent Charapters
+                Recent Characters
               </Typography>
               <br />
               <Characters />

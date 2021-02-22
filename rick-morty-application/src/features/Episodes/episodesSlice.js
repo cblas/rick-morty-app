@@ -3,7 +3,7 @@ import API from '../../http-configs/api-base';
 
 
 export const fetchEpisodes = createAsyncThunk("fetchEpisodes", async (filters) => {
-  const response = await API.get("/episode/?name=" + filters.name);
+  const response = await API.get("/episode/?name="+filters.name+"&?page="+filters.pagination);
   return response.data.results;
 });
 

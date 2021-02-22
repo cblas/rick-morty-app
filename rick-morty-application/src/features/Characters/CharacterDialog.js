@@ -24,6 +24,9 @@ const useStyles = makeStyles({
         backgroundColor: blue[100],
         color: blue[600],
     },
+    icon: {
+        color: 'rgba(255, 255, 255, 0.54)',
+      },
 });
 
 function CharacterDialog(props) {
@@ -43,28 +46,6 @@ function CharacterDialog(props) {
             <DialogTitle id="dialog-title">
                 <BadgeAvatar character={character}/>{character.name} Profile 
             </DialogTitle>
-            {/* <List> */}
-            {/* <ListItem key={character.id} alignItems="flex-start">
-                    <ListItemAvatar>
-                        <BadgeAvatar character={character} />
-                    </ListItemAvatar>
-                    <ListItemText
-                        secondary={
-                            <React.Fragment>
-                                <Typography
-                                    component="span"
-                                    variant="body2"
-                                    className={classes.inline}
-                                    color="textPrimary"
-                                >
-                                    Name:
-                            </Typography>
-                                {' ' + character.name}
-                            </React.Fragment>
-                        }
-                    />
-                </ListItem> */}
-            {/* </List> */}
             <div className={classes.root}>
                 <List component="nav" aria-label="main mailbox folders">
                     <ListItem>
@@ -132,7 +113,7 @@ CharacterDialog.propTypes = {
     onClose: PropTypes.func.isRequired,
     open: PropTypes.bool.isRequired,
     selectedValue: PropTypes.string.isRequired,
-};
+};;
 
 export default function CharacterDialogProfile(props) {
     const classes = useStyles();

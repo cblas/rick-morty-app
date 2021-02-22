@@ -8,8 +8,8 @@ import store from "./redux-app/store";
 import { fetchEpisodes } from "./features/Episodes/episodesSlice";
 import { fetchCharacters } from "./features/Characters/CharacterSlice";
 
-store.dispatch(fetchEpisodes({name: ""}));
-store.dispatch(fetchCharacters({name: ""}));
+store.dispatch(fetchEpisodes({name: "", pagination: 1}));
+store.dispatch(fetchCharacters({name: "", pagination: 1}));
 
 ReactDOM.render(
   <React.StrictMode>

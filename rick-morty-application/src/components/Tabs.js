@@ -45,8 +45,9 @@ function a11yProps(index) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 0.5,
-    width: '100%',
+    alignItems: 'center',
+    flexGrow: 1,
+    width: '73%',
     backgroundColor: theme.palette.background.paper,
   },
 }));
@@ -61,15 +62,13 @@ export default function ScrollableTabsButtonForce() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar position="center" color="default">
         <Tabs
           value={value}
           onChange={handleChange}
-          variant="scrollable"
-          scrollButtons="on"
           indicatorColor="primary"
           textColor="primary"
-          aria-label="scrollable force tabs example"
+          centered
         >
           <Tab label="By Episode" icon={<Movie />} {...a11yProps(0)} />
           <Tab label="By Character" icon={<AccountCircleIcon />} {...a11yProps(1)} />
